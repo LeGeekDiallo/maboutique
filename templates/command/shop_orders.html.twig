@@ -1,0 +1,28 @@
+{% extends 'back_shop_base.html.twig' %}
+{% block title %}Commandes{% endblock %}
+
+{% block body %}
+    <main class="__shop_order_page">
+        <main class="__container">
+            <div class="__order_search">
+                {{ form_start(form) }}
+                    {{ form_widget(form.orderNumber) }}
+                    <button type="submit" class="btn btn-sm"><i class="fas fa-search"></i></button>
+                {{ form_end(form) }}
+            </div>
+            <nav>
+                <a href="{{ path('orders_by_state', { shop:app.user.shop.id, state:"all" }) }}" class="btn btn-sm">Toutes les commandes</a>
+                <a href="{{ path('orders_by_state', { shop:app.user.shop.id, state:"confirmed" }) }}" class="btn btn-sm">Commandes confirmées</a>
+                <a href="{{ path('orders_by_state', { shop:app.user.shop.id, state:"canceled" }) }}" class="btn btn-sm">Commandes annulées</a>
+            </nav>
+            <h3>Commandes recentes</h3>
+            <div class="__orders">
+                {% for order in orders %}
+                    {% include "command/__order.html.twig" with {items: order.getOrderItems()[0].product, order:order, article:order.getOrderItems()[0] }%}
+                {% endfor %}
+            </div>
+        </main>
+    </main>
+{% endblock %}
+
+

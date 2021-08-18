@@ -1,0 +1,12 @@
+<div class="__comment_card">
+    <div class="__comment_auth">
+        <img src="{{ asset('images/avatar_def.png') }}" alt="author av">
+    </div>
+    <div class="__comment">
+        {% if comment.user %}
+            <p class="__auth">{{ comment.user.getUserName() }}</p>
+        {% endif %}
+        {{ comment.comment|raw }}
+        <p class="__comment_date">{{ comment.createdAt|format_datetime('full', 'none', locale='fr') }}</p>
+    </div>
+</div>

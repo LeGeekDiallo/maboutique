@@ -1,0 +1,14 @@
+{% extends 'back_shop_base.html.twig' %}
+
+{% block title %}Nouveau produit{% endblock %}
+
+{% block body %}
+    <main class="__back_shop_container">
+        <main class="__back_shop_page">
+            <div class="__form_container">
+                <p>Pour chacune des tailles, indiquez le nombre d'exemplaires du produit</p>
+                {% include 'product/__availability_form_type.html.twig' %}
+            </div>
+        </main>
+    </main>
+{% endblock %}

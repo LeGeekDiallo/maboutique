@@ -1,0 +1,1285 @@
+.__merchant_infos h4 {
+  font-family: Ubuntu;
+}
+.__merchant_infos ul li {
+  padding: 3px;
+}
+.__merchant_infos ul li span {
+  padding: 5px;
+  border: 1px solid #F1166C;
+  border-radius: 3px;
+  background-color: #ced4da;
+}
+
+.__the_shop_sub_nav {
+  height: 4rem;
+  background-color: #ced4da;
+  padding: 5px;
+  margin-top: 5rem;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+.__the_shop_sub_nav .__type_items {
+  padding: 7px;
+}
+.__the_shop_sub_nav .__type_items ul li a {
+  font-family: Ubuntu-ligth;
+}
+.__the_shop_sub_nav .__type_items ul li a:hover {
+  font-family: Ubuntu;
+}
+.__the_shop_sub_nav .__brands ul li a:hover {
+  font-family: Ubuntu;
+}
+.__the_shop_sub_nav .__the_shop_cat {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__the_shop_sub_nav .__the_shop_cat .__shop_cat {
+  height: 100%;
+  padding: 10px;
+}
+.__the_shop_sub_nav .__the_shop_cat .__accessories:hover {
+  background-color: whitesmoke;
+}
+.__the_shop_sub_nav .__the_shop_cat .__accessories:hover .__acc_items_list {
+  display: grid;
+}
+.__the_shop_sub_nav .__the_shop_cat .__shoes:hover {
+  background-color: whitesmoke;
+}
+.__the_shop_sub_nav .__the_shop_cat .__shoes:hover .__shoes_items_list {
+  display: grid;
+}
+.__the_shop_sub_nav .__the_shop_cat .__cloths:hover {
+  background-color: whitesmoke;
+}
+.__the_shop_sub_nav .__the_shop_cat .__cloths:hover .__cloth_items_list {
+  display: grid;
+}
+.__the_shop_sub_nav .__the_shop_cat a {
+  font-family: Ubuntu;
+}
+.__the_shop_sub_nav .__the_shop_cat .__acc_items_list {
+  display: none;
+  background-color: whitesmoke;
+  position: absolute;
+  left: 0;
+  top: 3.7rem;
+  width: 80%;
+  z-index: 1;
+  grid-template-columns: 30% 40% 30%;
+  border-radius: 3px;
+}
+.__the_shop_sub_nav .__the_shop_cat .__acc_items_list .__brands {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.__the_shop_sub_nav .__the_shop_cat .__acc_items_list .__brands ul li a {
+  font-family: Ubuntu-ligth;
+}
+.__the_shop_sub_nav .__the_shop_cat .__acc_items_list .__brands ul li a img {
+  height: 3rem;
+  width: 3rem;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.__the_shop_sub_nav .__the_shop_cat .__shoes_items_list {
+  display: none;
+  background-color: whitesmoke;
+  position: absolute;
+  left: 0;
+  top: 3.7rem;
+  width: 80%;
+  z-index: 1;
+  grid-template-columns: 30% 40% 30%;
+  border-radius: 3px;
+}
+.__the_shop_sub_nav .__the_shop_cat .__shoes_items_list .__brands {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.__the_shop_sub_nav .__the_shop_cat .__shoes_items_list .__brands ul li a {
+  font-family: Ubuntu-ligth;
+}
+.__the_shop_sub_nav .__the_shop_cat .__shoes_items_list .__brands ul li a img {
+  height: 3rem;
+  width: 3rem;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.__the_shop_sub_nav .__the_shop_cat .__cloth_items_list {
+  display: none;
+  background-color: whitesmoke;
+  position: absolute;
+  left: 0;
+  top: 3.7rem;
+  width: 80%;
+  z-index: 1;
+  grid-template-columns: 30% 40% 30%;
+  border-radius: 3px;
+}
+.__the_shop_sub_nav .__the_shop_cat .__cloth_items_list .__brands {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.__the_shop_sub_nav .__the_shop_cat .__cloth_items_list .__brands ul li a {
+  font-family: Ubuntu-ligth;
+}
+.__the_shop_sub_nav .__the_shop_cat .__cloth_items_list .__brands ul li a img {
+  height: 3rem;
+  width: 3rem;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.__the_shop_sub_nav .__the_shop_cat .__cat_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__the_shop_sub_nav .__the_shop_cat .__cat_image img {
+  width: 15rem;
+  height: 15rem;
+}
+
+.__msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.__msg .slogan {
+  font-size: 3rem;
+}
+.__msg .__search_msg {
+  font-size: 20px;
+  text-align: center;
+  font-family: Ubuntu-ligth;
+}
+
+.__new_comment_form form textarea {
+  height: 150px;
+  box-sizing: border-box;
+  resize: none;
+  padding: 12px 20px;
+}
+
+.__shop_comments {
+  padding: 3px;
+  width: 100%;
+}
+.__shop_comments .__comment_card {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  margin-bottom: 5px;
+}
+.__shop_comments .__comment_card .__comment_auth {
+  display: flex;
+  justify-content: center;
+}
+.__shop_comments .__comment_card .__comment_auth img {
+  border-radius: 50%;
+  vertical-align: middle;
+  height: 3rem;
+  width: 3rem;
+}
+.__shop_comments .__comment_card .__comment .__auth {
+  font-family: Ubuntu;
+}
+.__shop_comments .__comment_card .__comment .__comment_text {
+  text-indent: 15px;
+  padding: 3px;
+}
+.__shop_comments .__comment_card .__comment .__comment_date {
+  text-align: end;
+  font-family: Ubuntu;
+}
+
+.__related_product {
+  width: 100%;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 7px;
+}
+.__related_product .__related_product_card {
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+.__related_product .__related_product_card .__shop_product_image {
+  height: 10rem;
+  width: 100%;
+}
+.__related_product .__related_product_card .__shop_product_image img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+.__related_product .__related_product_card .__product_body {
+  padding: 3px;
+}
+.__related_product .__related_product_card .__product_body .__product_infos {
+  display: flex;
+  flex-direction: column;
+}
+.__related_product .__related_product_card .__product_body .__product_brand, .__related_product .__related_product_card .__product_body .__product_price {
+  font-family: Ubuntu;
+}
+
+.__stock_card {
+  padding: 3px;
+  border: 1px solid #F1166C;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.__stock_card .__svg {
+  height: 15rem;
+  border-bottom: 1px solid #F1166C;
+}
+.__stock_card .__svg img {
+  height: 100%;
+  width: 100%;
+}
+.__stock_card p span {
+  font-family: Ubuntu-ligth;
+  font-size: 12px;
+}
+
+.__stock_main_page {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.__stock_main_page .__container {
+  width: 70%;
+  padding: 5px;
+}
+.__stock_main_page .__container .anchor {
+  text-align: end;
+}
+.__stock_main_page .__container .__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 7px;
+}
+
+.__client_card {
+  height: 5rem;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  border: 1px solid aliceblue;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: box-shadow 2s;
+}
+.__client_card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.__client_card .__client_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1166C;
+  padding: 5px;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 5rem;
+}
+.__client_card .__client_number h5 {
+  font-family: Ubuntu;
+}
+.__client_card .__client_infos {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.__client_card .__client_infos img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  vertical-align: text-top;
+}
+.__client_card .__client_infos .__infos {
+  width: 100%;
+}
+.__client_card .__client_infos .__infos h5 {
+  font-family: Ubuntu-ligth;
+}
+.__client_card .__client_infos .__infos p {
+  text-align: end;
+}
+
+.__shop_footer {
+  padding: 5px;
+}
+.__shop_footer h4 {
+  text-align: center;
+  font-family: Ubuntu;
+}
+.__shop_footer .__footer_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  border-top: 1px solid #F1166C;
+  border-bottom: 1px solid #F1166C;
+}
+.__shop_footer .__footer_container .__footer_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.__shop_footer .__footer_container .__footer_column h5 {
+  font-family: Ubuntu;
+}
+.__shop_footer .__footer_container .__footer_column ul {
+  list-style-type: none;
+  font-family: Ubuntu-ligth;
+}
+
+.__order_card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 7px;
+  border: 1px solid #F1166C;
+  border-radius: 7px;
+  margin-bottom: 5px;
+}
+.__order_card span {
+  font-family: Ubuntu-ligth;
+}
+.__order_card ul li {
+  margin-left: 10px;
+}
+.__order_card .__client {
+  width: 100%;
+}
+.__order_card .__client .infos span {
+  font-family: Ubuntu;
+}
+.__order_card .__client .infos img {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: center;
+  border-radius: 50%;
+}
+.__order_card .__client .infos a {
+  font-family: Ubuntu;
+}
+
+.__shop_client_page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.__shop_client_page .__container {
+  width: 75%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.__shop_client_page .__container a {
+  font-family: Ubuntu;
+}
+.__shop_client_page .__container .__clients {
+  width: 50%;
+}
+.__shop_client_page .__container .__client_search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 7px;
+}
+.__shop_client_page .__container .__client_search form {
+  width: 70%;
+  display: flex;
+}
+.__shop_client_page .__container .__client_search form input {
+  margin-right: 5px;
+}
+
+.__shop_order_page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.__shop_order_page .__container {
+  width: 75%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.__shop_order_page .__container a {
+  font-family: Ubuntu;
+}
+.__shop_order_page .__container .__order_search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 7px;
+}
+.__shop_order_page .__container .__order_search form {
+  width: 70%;
+  display: flex;
+}
+.__shop_order_page .__container .__order_search form input {
+  margin-right: 5px;
+}
+
+.__order_done_page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.__order_done_page .__container {
+  width: 50%;
+  padding: 7px;
+}
+.__order_done_page .__container p {
+  font-family: Ubuntu-ligth;
+  text-align: center;
+}
+
+.__command_recap_page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.__command_recap_page .__container {
+  width: 75%;
+  padding: 5px;
+}
+.__command_recap_page .__container .__products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  padding: 7px;
+}
+.__command_recap_page .__container .__proceed {
+  padding: 7px;
+  background-color: #F1166C;
+  display: flex;
+  justify-content: flex-end;
+}
+.__command_recap_page .__container .__proceed .btn {
+  color: #F1166C;
+  background-color: black;
+  font-family: Ubuntu;
+  text-align: center;
+}
+.__command_recap_page .__container .__proceed p {
+  text-align: center;
+  padding: 5px;
+}
+
+.__error_page {
+  margin-top: 5rem;
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__error_page .__error_container {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.__error_page .__error_container .__error h2 {
+  text-align: center;
+  font-family: Ubuntu;
+  color: #F1166C;
+}
+.__error_page .__error_container .__error p {
+  font-family: Ubuntu-ligth;
+}
+.__error_page .__error_container .__error .error_message {
+  font-family: Ubuntu-ligth;
+  text-indent: 10px;
+  text-align: center;
+}
+
+#__new_shop_small_device {
+  display: none;
+}
+
+.__cart_main_page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+.__cart_main_page .__cart_container {
+  width: 75%;
+  padding: 5px;
+}
+.__cart_main_page .__cart_container .__empty_cart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.__cart_main_page .__cart_container .__empty_cart img {
+  width: 50%;
+  height: 50%;
+}
+.__cart_main_page .__cart_container .__empty_cart p {
+  font-size: 3rem;
+  font-family: Ubuntu-ligth;
+}
+.__cart_main_page .__cart_container .__products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  padding: 7px;
+}
+.__cart_main_page .__cart_container .__proceed {
+  padding: 7px;
+  background-color: #F1166C;
+  display: flex;
+  justify-content: flex-end;
+}
+.__cart_main_page .__cart_container .__proceed .btn {
+  color: #F1166C;
+  background-color: black;
+  font-family: Ubuntu;
+  text-align: center;
+}
+.__cart_main_page .__cart_container .__proceed p {
+  text-align: center;
+  padding: 5px;
+}
+
+.__image_active {
+  width: 100%;
+  height: 100%;
+  animation-name: fadeInRight;
+  animation-duration: 1s;
+}
+
+.dot_active {
+  background-color: #F1166C;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+  background-color: #F1166C;
+}
+
+.__dot_control {
+  width: 100%;
+  margin-top: 7px;
+  display: flex;
+  justify-content: center;
+}
+
+.__left {
+  left: 0;
+}
+
+.__right {
+  right: 0;
+}
+
+.__right, .__left {
+  background-color: #F1166C;
+  font-family: Ubuntu;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transition: 0.6s ease;
+  user-select: none;
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.__shop_product_image img {
+  width: 100%;
+  height: 100%;
+}
+
+.__product_details_main_page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__product_details_main_page .__product_details_container {
+  width: 60%;
+  padding: 5px;
+}
+.__product_details_main_page .__product_details_container .__product_infos h3, .__product_details_main_page .__product_details_container .__product_infos .price {
+  font-family: Ubuntu;
+}
+.__product_details_main_page .__product_details_container .__product_details .__infos .__add_to_cart {
+  width: 15rem;
+  padding: 5px;
+  border-radius: 7px;
+  border: 1px solid #F1166C;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.__product_details_main_page .__product_details_container .__product_details .__infos .__add_to_cart form label {
+  font-family: Ubuntu-ligth;
+  font-size: 12px;
+}
+.__product_details_main_page .__product_details_container .__product_details hr {
+  width: 100%;
+}
+.__product_details_main_page .__product_details_container .__product_details .__product_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__product_details_main_page .__product_details_container .__product_details .__product_search form {
+  width: 60%;
+  display: flex;
+}
+.__product_details_main_page .__product_details_container .__product_details .__the_shop_cat {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.__product_details_main_page .__product_details_container .__product_details .__the_shop_cat ul {
+  display: flex;
+}
+.__product_details_main_page .__product_details_container .__product_details .__the_shop_cat ul li {
+  margin-right: 5px;
+}
+.__product_details_main_page .__product_details_container .__product_details .__the_shop_cat ul li a {
+  font-family: Ubuntu;
+}
+.__product_details_main_page .__product_details_container .__product_details .__images {
+  width: 100%;
+  height: 49rem;
+  position: relative;
+  overflow: hidden;
+}
+.__product_details_main_page .__product_details_container .__product_details .__images .__product_img_item {
+  display: none;
+}
+.__product_details_main_page .__product_details_container .__product_details .__images img {
+  height: 100%;
+  width: 100%;
+}
+
+.__theShop_main_page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+.__theShop_main_page .__the_shop_products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+.__theShop_main_page .__theShop_container {
+  width: 75%;
+  padding: 5px;
+}
+.__theShop_main_page .__theShop_container a {
+  font-family: Ubuntu-ligth;
+  color: #F1166C;
+}
+.__theShop_main_page .__theShop_container hr {
+  width: 100%;
+}
+.__theShop_main_page .__theShop_container .nb_comments {
+  font-family: Ubuntu;
+}
+.__theShop_main_page .__theShop_container p {
+  font-family: Ubuntu-ligth;
+  text-indent: 10px;
+}
+.__theShop_main_page .__theShop_container .__product_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__theShop_main_page .__theShop_container .__product_search form {
+  width: 60%;
+  display: flex;
+}
+.__theShop_main_page .__theShop_container .__product_search form input {
+  margin-right: 3px;
+}
+.__theShop_main_page .__theShop_container .shop_infos {
+  font-family: Ubuntu-ligth;
+  text-align: center;
+  text-indent: 10px;
+}
+.__theShop_main_page .__theShop_container .__the_shop_cat {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.__theShop_main_page .__theShop_container .__the_shop_cat ul {
+  display: flex;
+}
+.__theShop_main_page .__theShop_container .__the_shop_cat ul li {
+  margin-right: 5px;
+}
+.__theShop_main_page .__theShop_container .__the_shop_cat ul li a {
+  font-family: Ubuntu;
+}
+
+.__dropdown_content {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: auto;
+  right: 12px;
+  top: 2rem;
+  padding: 5px;
+  animation: fadeInUp;
+  animation-duration: 0.3s;
+}
+.__dropdown_content ul {
+  list-style-type: none;
+  font-family: Ubuntu-ligth;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3px;
+}
+.__dropdown_content ul li a {
+  float: none;
+  color: black;
+  text-decoration: none;
+  text-align: left;
+  font-size: 10px;
+  font-family: Ubuntu-ligth;
+}
+
+.client {
+  cursor: pointer;
+}
+
+.__the_shop_nav_bar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 5px;
+  height: 5rem;
+  background-color: #F1166C;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  z-index: 3;
+}
+.__the_shop_nav_bar .__the_shop_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__the_shop_nav_bar .__the_shop_home a {
+  font-size: 18px;
+  font-family: Ubuntu;
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+.__the_shop_nav_bar .__the_shop_nav_links .cart, .__the_shop_nav_bar .__the_shop_nav_links .client {
+  float: right;
+  text-align: center;
+  font-family: Ubuntu;
+  font-size: 20px;
+  padding: 14px 16px;
+}
+.__the_shop_nav_bar .__the_shop_nav_links .__user_active {
+  font-size: 7px;
+  position: relative;
+  color: #36d404;
+  bottom: 12px;
+  right: 5px;
+}
+.__the_shop_nav_bar .__the_shop_nav_links .cart_badge {
+  font-size: 10px;
+  position: relative;
+  bottom: 12px;
+  right: 5px;
+}
+.__the_shop_nav_bar .__the_shop_nav_links .client .__dropdown_content {
+  display: none;
+}
+.__the_shop_nav_bar .__the_shop_nav_links .client .__dropdown_content ul li:hover {
+  background-color: #F1166C;
+}
+.__the_shop_nav_bar .__the_shop_nav_links .client:hover .__dropdown_content {
+  display: block;
+}
+
+.__shop_card {
+  width: 100%;
+  border-bottom: 1px solid #F1166C;
+  padding: 5px;
+  margin-bottom: 7px;
+}
+.__shop_card img {
+  height: 100%;
+  width: 100%;
+}
+.__shop_card .__shop_infos .__shop_name {
+  font-family: Ubuntu;
+  color: #F1166C;
+  font-size: 20px;
+}
+.__shop_card .__shop_infos h3 .address {
+  font-family: Ubuntu-ligth;
+  font-size: 15px;
+}
+.__shop_card .__shop_infos h3 i {
+  font-size: 20px;
+}
+
+.shops_main_page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shops_main_page .shops_container {
+  margin-top: 5rem;
+  width: 75%;
+}
+.shops_main_page .shops_container hr {
+  width: 100%;
+}
+.shops_main_page .shops_container p {
+  text-align: center;
+  font-size: 2rem;
+}
+.shops_main_page .shops_container .__shops_founds {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 7px;
+}
+
+.__forgotten_password {
+  font-family: Ubuntu;
+  text-align: center;
+}
+
+.__product_card {
+  width: 100%;
+  display: grid;
+}
+.__product_card .__shop_product_image {
+  height: 22rem;
+  width: 100%;
+}
+.__product_card .__product_image {
+  width: 100%;
+  height: 16rem;
+}
+.__product_card .__product_image img {
+  width: 100%;
+  height: 100%;
+}
+.__product_card .__product_image a {
+  position: relative;
+  bottom: 25px;
+  padding: 3px;
+  background-color: #F1166C;
+}
+.__product_card .__product_body .__product_infos {
+  display: flex;
+  flex-direction: column;
+}
+.__product_card .__product_body .__product_brand, .__product_card .__product_body .__product_price {
+  font-family: Ubuntu;
+}
+.__product_card .__product_body ul {
+  display: flex;
+}
+.__product_card .__product_body ul li {
+  padding: 5px;
+  text-align: center;
+  background-color: #F1166C;
+  font-family: Ubuntu;
+  margin: 2px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.__shop_details {
+  padding: 10px;
+}
+.__shop_details p {
+  text-decoration: underline;
+  text-decoration-color: #F1166C;
+}
+.__shop_details a {
+  text-align: end;
+}
+
+.__product_container {
+  width: 100%;
+  padding: 5px;
+}
+.__product_container .__products {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+::placeholder {
+  color: black;
+  font-family: Ubuntu;
+}
+
+.__row-1 .__column_btn {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+.__row-1 .__column_btn_log {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.__row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+}
+
+.__sign_log_links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.__sign_log_links .__sign_log {
+  width: 20%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+}
+.__sign_log_links .__user_av img {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: center;
+  border-radius: 50%;
+}
+.__sign_log_links .__log_out {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.__sign_log_links .__log_out i {
+  color: #F1166C;
+}
+
+.__shop_nav_links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.__shop_nav_links .btn {
+  background-color: white;
+  color: #F1166C;
+}
+.__shop_nav_links .__log_out {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.__shop_nav_links .__log_out i {
+  color: white;
+}
+
+.__shop_dashboard {
+  width: 100%;
+  padding: 5px;
+}
+.__shop_dashboard .__dashboard_items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 7px;
+}
+
+.__back_shop_container {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.__back_shop_container .__back_shop_page {
+  width: 70%;
+  padding: 7px;
+}
+.__back_shop_container .__back_shop_page h2 {
+  font-family: Ubuntu;
+  text-align: center;
+}
+.__back_shop_container .__back_shop_page p {
+  font-family: Ubuntu-ligth;
+}
+.__back_shop_container .__back_shop_page ul li {
+  font-family: Ubuntu-ligth;
+}
+.__back_shop_container .__back_shop_page .__form_container p {
+  font-family: Ubuntu-ligth;
+}
+.__back_shop_container .__back_shop_page .__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30rem;
+}
+.__back_shop_container .__back_shop_page .__container p {
+  font-family: Ubuntu-ligth;
+}
+.__back_shop_container .__back_shop_page .__container .__sizes {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #F1166C;
+  border-radius: 5px;
+}
+.__back_shop_container .__back_shop_page .__container .__sizes a {
+  padding: 20px;
+  border-radius: 3px;
+  background-color: darkgray;
+  font-family: Ubuntu;
+  margin-right: 5px;
+}
+.__back_shop_container .__back_shop_page .__container .__sizes a:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.__back_shop_container .__back_shop_page .__product_images_container {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+.__back_shop_container .__back_shop_page .__product_images_container .__product_image {
+  padding: 3px;
+}
+.__back_shop_container .__back_shop_page .__product_images_container .__product_image button {
+  position: relative;
+  bottom: 37px;
+}
+.__back_shop_container .__back_shop_page .__product_images_container .__product_image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+.__back_shop_container .__back_shop_page .__product_images_container form {
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid #F1166C;
+}
+.__back_shop_container .__back_shop_page hr {
+  width: 100%;
+}
+.__back_shop_container .__back_shop_page .__back_shop_infos_container {
+  height: 10rem;
+}
+.__back_shop_container .__back_shop_page .__back_shop_infos_container .__shop_infos p {
+  text-align: center;
+  font-family: Ubuntu-ligth;
+}
+.__back_shop_container .__back_shop_page .__back_shop_infos_container .__shop_avatar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__back_shop_container .__back_shop_page .__back_shop_infos_container .__shop_avatar img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.__back_shop_container .__back_shop_page .__back_shop_infos_container .__shop_avatar a {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  top: 25px;
+  right: 20px;
+  text-align: center;
+}
+
+.__client_profile_page {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.__client_profile_page .__client_page {
+  width: 70%;
+  padding: 7px;
+}
+.__client_profile_page .__client_page hr {
+  width: 100%;
+}
+.__client_profile_page .__client_page .__client_infos_container {
+  height: 10rem;
+}
+.__client_profile_page .__client_page .__client_infos_container .__client_infos p {
+  text-align: center;
+  font-family: Ubuntu-ligth;
+}
+.__client_profile_page .__client_page .__client_infos_container .__client_avatar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__client_profile_page .__client_page .__client_infos_container .__client_avatar img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.__client_profile_page .__client_page .__client_infos_container .__client_avatar a {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  top: 25px;
+  right: 20px;
+  text-align: center;
+}
+
+.btn {
+  background-color: #F1166C;
+}
+
+.__new_shop span {
+  padding: 5px;
+  font-family: Ubuntu;
+  font-size: 15px;
+  border: 1px solid #F1166C;
+  border-radius: 50%;
+}
+
+label {
+  font-family: Ubuntu;
+}
+
+.__row-1 {
+  margin-bottom: 5px;
+}
+
+.__main_page {
+  margin-top: 5rem;
+  height: 100%;
+  width: 100%;
+}
+.__main_page .__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__main_page .__container .__form_container {
+  width: 50%;
+  padding: 5px;
+}
+.__main_page .__container .__form_login_container {
+  border-radius: 7px;
+  width: 70%;
+  padding: 5px;
+}
+.__main_page .__container .__form_login_container .__row-1 {
+  margin-bottom: 5px;
+}
+.__main_page .__container .__sign_log_svg {
+  width: 100%;
+  height: 10rem;
+  padding: 7px;
+}
+.__main_page .__container .__sign_log_svg img {
+  height: 100%;
+  width: 100%;
+}
+.__main_page .__container .__log_svg {
+  width: 100%;
+  height: 20rem;
+  padding: 7px;
+}
+.__main_page .__container .__log_svg img {
+  height: 100%;
+  width: 100%;
+}
+
+.__row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+}
+
+.validate_btn {
+  background-color: #F1166C;
+  font-family: Ubuntu;
+}
+
+/*# sourceMappingURL=app.css.map */

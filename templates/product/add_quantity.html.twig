@@ -1,0 +1,27 @@
+{% extends 'back_shop_base.html.twig' %}
+{% block title %}Nombre d'exemplaire de produit par taille{% endblock %}
+
+{% block body %}
+    <main class="__back_shop_container">
+        <main class="__back_shop_page">
+            <div class="__container">
+                <p>Pour chacune des tailles, indiquez le nombre d'exemplaires du produit : {{ product.slug }}</p>
+                <div class="__sizes">
+                    {% for size in product.getTheSizesNotAdded() %}
+                        <a href="{{ path('is_in_stock', {
+                            product:product.id,
+                            sizeIndex: product.productSizes.indexOf(size),
+                            shop:shop.id
+                        }) }}">{{ size.size }}
+                        </a>
+                    {% endfor %}
+                </div>
+                {% if sold_out is same as("out")%}
+                    <p class="badge badge-danger mt-2">Le produit n'est pas disponible dans cette taille</p>
+                {% endif %}
+            </div>
+        </main>
+    </main>
+{% endblock %}
+
+

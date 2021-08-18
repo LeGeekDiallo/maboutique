@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="plateforme boutique en ligne en Guinée">
+    <meta name="keywords" content="boutique, boutique en ligne">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<nav class="__nav_bar_back_shop">
+    <div class="__home_link"><a href="{{ path('back_shop') }}">
+            {% if app.user and app.user.shop %}
+                {{ app.user.shop.shopName }}
+                {% else %}
+                    Ma <span>Boutique</span>
+            {% endif %}
+        </a>
+    </div>
+    <div class="__shop_nav_links">
+        {% if app.user %}
+            <a href="{{ path('back_shop') }}" class="btn"><i class="fas fa-store"></i></a>
+        {% endif %}
+        <div class="__log_out">
+            <a href="{{ path('app_logout') }}"><i class="fas fa-power-off"></i> Deconnexion</a>
+        </div>
+    </div>
+</nav>
+{% block body %}{% endblock %}
+</body>
+</html>

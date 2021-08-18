@@ -1,0 +1,27 @@
+{% extends 'the_shop_base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+<main class="__cart_main_page">
+    <main class="__cart_container">
+        {% if products.productInCart(theShop)|length %}
+            <h3>Votre panier</h3>
+            <div class="__products">
+                {% for product in products.productInCart(theShop) %}
+                    {% include "product/__product_card_cart.html.twig" with {"product": product.getProduct()[0], "cart": product} %}
+                {% endfor %}
+            </div>
+            <div class="__proceed">
+                <p>Total: {{ price | number_format(0, ' ', ' ') }} FG </p>
+                <a href="{{ path('command_recap', { price:price, shop:theShop.id }) }}" class="btn btn-sm">Commander</a>
+            </div>
+            {% else %}
+            <div class="__empty_cart">
+                <img src="{{ asset('images/svg_images/cart.svg') }}" alt="empty cart">
+                <p>Votre panier semble être vide</p>
+            </div>
+        {% endif %}
+    </main>
+</main>
+{% endblock %}

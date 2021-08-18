@@ -1,0 +1,20 @@
+<div class="__shop_card">
+    <div class="__shop_image">
+        <a href="{{ path('shop_page', { shop:shop.id, slug:shop.getSlug() }) }}">
+            <img src="{{ asset('images/shop_logo/'~shop.shopLogo) }}" alt="shop logo">
+        </a>
+    </div>
+    <div class="__shop_card_body">
+        <div class="__shop_infos">
+            <span class="__shop_name">{{ shop.shopName }}</span>
+            <h3>
+                <i class="fas fa-map-marker"></i>
+                <span class="address">{{ shop.city }}</span>
+                <span class="address">{{ shop.municipality }}</span>
+                <span class="address">{{ shop.district }}</span>
+            </h3>
+
+        </div>
+    </div>
+</div>
+

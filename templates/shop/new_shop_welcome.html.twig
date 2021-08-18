@@ -1,0 +1,39 @@
+{% extends 'back_shop_base.html.twig' %}
+{% block title %}Ouverture de boutique{% endblock %}
+
+{% block body %}
+    <main class="__back_shop_container">
+        <main class="__back_shop_page">
+            <h2>Bienvenue sur la plateforme Maboutique</h2>
+            <p>
+                Si vous êtes là ce que vous désirez ouvrir votre boutique de vêtements en ligne. <br>
+                Ne vous inquietez pas, cela vous prendra que 2min. <br>
+                Mais avant il est impératif que vous sachiez ce que cette plateforme va vous apporter de nouveau.
+                <br>
+                Au lieu de payer chère pour un tout nouveau site pour votre boutique de vêtements ou de faire des publications
+                <br> regulières sur les réseaux sociaux ( un peu pénible n'est-ce pas ? ), Maboutique vous permet :
+                <br>
+            </p>
+            <ul>
+                <li>D'ouvrir votre boutique en un rien de temps</li>
+                <li>D'ajouter vos produits par catégorie et type et en y fournissant tous les details necessaires</li>
+                <li>De supprimer ou modifier un produit</li>
+                <li>De gérer votre stock</li>
+                <li>De recevoir les commandes de vos clients</li>
+                <li>De valider ou annuler une commande</li>
+                <li>De consulter la liste de tous vos clients</li>
+            </ul>
+            {% if not app.user.shop %}
+                <a href="{{ path('new_shop', {merchant: app.user.id}) }}" class="btn">Ouvrire ma boutique</a>
+                {% else %}
+                <p>
+                    Il semble que vous avez déjà ouvert votre boutique. <br>
+                    <em>Cliquer sur le bouton dessus pour y acceder</em>
+                </p>
+                    <a href="{{ path('back_shop') }}" class="btn">{{ app.user.shop.shopName }}</a>
+            {% endif %}
+        </main>
+    </main>
+{% endblock %}
+
+

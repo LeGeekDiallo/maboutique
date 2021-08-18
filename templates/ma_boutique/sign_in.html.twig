@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <main class="__main_page">
+        <div class="__container">
+            <div class="__form_container">
+                {% for message in app.flashes('notification') %}
+                    <div class="alert-danger __alert_error p-3" style="display: flex;">
+                        <p>{{ message }} <i class="far fa-surprise"></i></p>
+                    </div>
+                {% endfor %}
+                <div class="__sign_log_svg">
+                    <img src="{{ asset('images/svg_images/sign.svg') }}" alt="image png">
+                </div>
+                <div class="__announcement"><h5><i class="fas fa-user-plus"></i> Inscription</h5></div>
+                {{ form_start(form) }}
+                    <div class="__row-1">
+                        <div class="__column">
+                            {{ form_label(form.username, "* Nom et prenom") }}
+                            {{ form_widget(form.username) }}
+                        </div>
+                    </div>
+                    <div class="__row-2">
+                        <div class="__column">
+                            {{ form_label(form.email, "* Adresse Email") }}
+                            {{ form_widget(form.email) }}
+                        </div>
+                        <div class="__column">
+                            {{ form_label(form.phoneNumber, "* Numéro de Téléphone") }}
+                            {{ form_widget(form.phoneNumber) }}
+                        </div>
+                    </div>
+                    <div class="__row-1">
+                        <div class="__column">
+                            {{ form_label(form.userType, "* Vous êtes ?") }}
+                            {{ form_widget(form.userType) }}
+                        </div>
+                    </div>
+                    <div class="__row-1">
+                        <div class="__column">
+                            {{ form_label(form.password, "* Votre mot de passe") }}
+                            {{ form_widget(form.password) }}
+                        </div>
+                    </div>
+                <div class="__row-1">
+                    <button class="btn btn-block validate_btn mt-2" type="submit" id="validate_btn_user_register_form">M'inscrire</button>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+

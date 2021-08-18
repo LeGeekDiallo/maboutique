@@ -1,0 +1,51 @@
+{{ form_start(form) }}
+<p>Ouverture de boutique en ligne</p>
+<hr>
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(form.shopName, "* Nom de la boutique") }}
+        {{ form_widget(form.shopName) }}
+    </div>
+</div>
+<div class="__row-3">
+    <div class="__column">
+        {{ form_label(form.city, "* Selectionnez la ville") }}
+        {{ form_widget(form.city) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.municipality, "* La commune") }}
+        {{ form_widget(form.municipality) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.district, "* Le quartier") }}
+        {{ form_widget(form.district) }}
+    </div>
+</div>
+<div class="__row-2">
+    <div class="__column">
+        {{ form_label(form.email, "* Adresse email de la boutique") }}
+        {{ form_widget(form.email) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.phoneNumber, "* Numéro de téléphone de la boutique") }}
+        {{ form_widget(form.phoneNumber) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(form.shopLogo, "* Image ou logo") }}
+        {{ form_widget(form.shopLogo) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(form.otherInfos, "* Précisions sur votre l'adresse de la boutique") }}
+        {{ form_widget(form.otherInfos) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column_btn">
+        <button class="btn validate_btn" type="submit">Ouvrir</button>
+    </div>
+</div>
+{{ form_end(form) }}

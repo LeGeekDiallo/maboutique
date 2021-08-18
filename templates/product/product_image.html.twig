@@ -1,0 +1,26 @@
+{% extends 'back_shop_base.html.twig' %}
+{% block title %}Image-{{ product.getSlug() }}{% endblock %}
+
+{% block body %}
+    <main class="__back_shop_container">
+        <main class="__back_shop_page">
+            <div class="__product_images_container" id="product">
+                {% for image in product.productImages %}
+                    <div class="__product_image">
+                        <img src="{{ asset('/images/products_image/'~image.filename) }}" alt="product image">
+                        <button class="btn delete_btn" id="image-{{ image.id }}" data-url="{{ path('delete_product_image', {
+                            product:product.id,
+                            image:image.id
+                        }) }}"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                {% endfor %}
+                {% include 'product/__new_product_image.html.twig' %}
+            </div>
+        </main>
+    </main>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('delete_product_image') }}
+    {% endblock %}
+{% endblock %}
+
+

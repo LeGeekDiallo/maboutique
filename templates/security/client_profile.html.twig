@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ma boutique{% endblock %}
+
+{% block body %}
+    <main class="__client_profile_page">
+        <main class="__client_page">
+            <div class="__client_infos_container">
+                <div class="__client_avatar">
+                    <img src="{{ asset('images/avatar_def.png') }}" alt="">
+                    <a href="" class="btn btn-sm"><i class="fas fa-image"></i></a>
+                </div>
+                <div class="__client_infos">
+                    <p>
+                        <span>{{ app.user.getUsername() }}</span>
+                        <span><i class="fas fa-at"></i> {{ app.user.email }}</span>
+                        <span><i class="fas fa-mobile"></i> {{ app.user.phoneNumber }}</span>
+                        <a class="btn" href=""><i class="fas fa-user-edit"></i></a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="__client_dashboard">
+                <a href="" class="btn"><i class="fas fa-shopping-cart"></i> Vos commandes</a>
+                <a href="" class="btn"><i class="fas fa-heart"></i> Boutiques favories</a>
+            </div>
+        </main>
+    </main>
+{% endblock %}

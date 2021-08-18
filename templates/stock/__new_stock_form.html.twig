@@ -1,0 +1,34 @@
+{{ form_start(form) }}
+    <div class="__row-2">
+        <div class="__column">
+            {{ form_label(form.quantity, "* Donner la quantity") }}
+            {{ form_widget(form.quantity) }}
+        </div>
+        <div class="__column">
+            {{ form_label(form.size, "* Selectionner la taille") }}
+            {{ form_widget(form.size) }}
+        </div>
+    </div>
+<div class="__row-2">
+    <div class="__column">
+        {{ form_label(form.category, "* Selectionner la catégorie") }}
+        {{ form_widget(form.category) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.type, "* Selectionner le type") }}
+        {{ form_widget(form.type) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(form.brand, "* Selectionner la marque") }}
+        {{ form_widget(form.brand) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column_btn">
+        <button class="btn validate_btn" type="submit">Ajouter</button>
+    </div>
+</div>
+{{ form_end(form) }}
+

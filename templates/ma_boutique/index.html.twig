@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma boutique{% endblock %}
+
+{% block body %}
+    <main class="__home_panel" id="home">
+        <div class="__msg">
+            <p class="slogan">Ma boutique de vêtement</p>
+            <hr>
+            <p class="__search_msg">Recherchez votre boutique de vêtement</p>
+            <div class="__shop_search">
+                {% include('ma_boutique/__form_shop_search.html.twig') %}
+            </div>
+        </div>
+        <div class="__svg_logo">
+            <img src="{{ asset('images/svg_images/cart.svg') }}" alt="cart">
+        </div>
+    </main>
+    {{ include('footer.html.twig') }}
+{% endblock %}

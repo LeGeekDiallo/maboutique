@@ -1,0 +1,37 @@
+{% extends 'the_shop_base.html.twig' %}
+{% block title %}{{ theShop.shopName }}{% endblock %}
+{% block body %}
+<main class="__theShop_main_page">
+    <main class="__theShop_container">
+        <p class="shop_infos"></p>
+        <div class="__product_search">
+            {% include "product/__search_product_form.html.twig" %}
+        </div>
+        <a href="{{ path('ma_boutique') }}"><i class="fas fa-home"></i> accueil</a>
+        <hr>
+        <div class="__the_shop_products">
+            {% for product in theShopProducts %}
+                {% include "product/__product_card.html.twig" with {'product': product} %}
+            {% endfor %}
+        </div>
+        <hr>
+        <h4>Espace commentaire</h4>
+        <hr>
+        <p>
+            Faites nous savoir de ce que vous pensez de notre boutique, dites nous tout de votre expérience. <br>
+            Sachez que tout ce que vous dites serait très précieux pour nous et nous aidera à nous améliorer pour
+            une meilleur expérience.
+        </p>
+        <p class="nb_comments">Commentaires: {{ theShop.comments|length }}</p>
+        <hr>
+        <div class="__shop_comments">
+            {% for comment in theShop.comments %}
+                {% include "comment/__comment_card.html.twig" %}
+            {% endfor %}
+            <div class="__new_comment_form">
+                {% include "comment/__comment_form.html.twig" %}
+            </div>
+        </div>
+    </main>
+</main>
+{% endblock %}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="plateforme boutique en ligne en Guinée">
+    <meta name="keywords" content="boutique, boutique en ligne">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<nav class="__the_shop_nav_bar">
+    <div class="__the_shop_home">
+        <a href="{{ path('shop_page', {
+            shop:theShop.id, slug:theShop.getSlug()
+        }) }}"><span>{{ theShop.shopName }}</span></a>
+    </div>
+    <div class="__the_shop_nav_links">
+        <a href="{{ path('cart', { shop:theShop.id }) }}" class="cart"><i class="fas fa-shopping-basket"></i>
+            <span class="badge badge-danger cart_badge">{{ products.productInCart(theShop)|length }}</span>
+        </a>
+        {% if app.user %}
+            <div class="client">
+                <i class="fas fa-user-circle"></i><span class="__user_active"><i class="fas fa-circle"></i></span>
+                <div class="__dropdown_content">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('client') }}">Profil</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_logout') }}"><i class="fas fa-power-off"></i> Deconnexion</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% else %}
+            <div class="client"><i class="fas fa-user-circle"></i>
+                <div class="__dropdown_content">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('inscription') }}"><i class="fas fa-user-plus"></i> S'inscrire</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('login_user') }}"><i class="fas fa-sign-in-alt"></i> Se connecter</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</nav>
+<nav class="__the_shop_sub_nav">
+    <div class="__the_shop_cat">
+        <div class="__accessories __shop_cat">
+            <a href="{{ path('product_by_cat', {
+                shop:theShop.id,
+                category:'ACCESSOIRES'
+            }) }}">ACCESSOIRES</a>
+            <div class="__acc_items_list">
+                <div class="__type_items">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Accessoires de mode' }) }}">Accessoires de mode</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Bonnets' }) }}">Bonnets</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Bracelets' }) }}">Bracelets</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Ceintures' }) }}">Ceintures</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Colliers' }) }}">Colliers</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Echarpes-Foulards' }) }}">Echarpes-Foulards</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Gants' }) }}">Gants</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Lunettes de Soleil' }) }}">Lunettes de Soleil</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Montres' }) }}">Montres</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Portefeuilles' }) }}">Portefeuilles</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Sacs Banane' }) }}">Sacs Banane</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Sacs-Sacoches' }) }}">Sacs-Sacoches</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Bijoux' }) }}">Bijoux</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'ACCESSOIRES', type:'Casquettes-Chapeaux' }) }}">Casquettes/Chapeaux</a></li>
+                    </ul>
+                </div>
+                <div class="__brands">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'New Balance' }) }}">
+                                <img src="{{ asset('images/brand_logo/New_Balance.png') }}" alt="">New Balance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Nike' }) }}">
+                                <img src="{{ asset('images/brand_logo/nike.png') }}" alt="">Nike
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Puma' }) }}">
+                                <img src="{{ asset('images/brand_logo/Puma.png') }}" alt="">Puma
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Ray-Ban' }) }}">
+                                <img src="{{ asset('images/brand_logo/rayban.png') }}" alt="">Ray-Ban
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Reebok' }) }}">
+                                <img src="{{ asset('images/brand_logo/reebok.png') }}" alt="">Reebok
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Tommy Hilfiger' }) }}">
+                                <img src="{{ asset('images/brand_logo/tommy_hilfiger.png') }}" alt="">Tommy Hilfiger
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'adidas' }) }}">
+                                <img src="{{ asset('images/brand_logo/adidas.png') }}" alt="">adidas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Calvin Klein' }) }}">
+                                <img src="{{ asset('images/brand_logo/calvin_klein.png') }}" alt="">Calvin Klein
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Champion' }) }}">
+                                <img src="{{ asset('images/brand_logo/Champion.png') }}" alt="">Champion
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Diesel' }) }}">
+                                <img src="{{ asset('images/brand_logo/diesel.png') }}" alt="">Diesel
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Fila' }) }}">
+                                <img src="{{ asset('images/brand_logo/fila.png') }}" alt="">Fila
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'HUGO' }) }}">
+                                <img src="{{ asset('images/brand_logo/hugo.png') }}" alt="">HUGO
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'ACCESSOIRES', brand:'Jack And Jones' }) }}">
+                                <img src="{{ asset('images/brand_logo/jack-and-jones-logo.png') }}" alt="">Jack And Jones
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="__cat_image">
+                    <img src="{{ asset('images/svg_images/bags.svg') }}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="__shoes __shop_cat">
+            <a href="{{ path('product_by_cat', {
+                shop:theShop.id,
+                category:'CHAUSSURES'
+            }) }}">CHAUSSURES</a>
+            <div class="__shoes_items_list">
+                <div class="__type_items">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'CHAUSSURES', type:'Baskets Basses' }) }}">Baskets Basses</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'CHAUSSURES', type:'Baskets Montantes' }) }}">Baskets Montantes</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'CHAUSSURES', type:'Bottes - Boots' }) }}">Bottes - Boots</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'CHAUSSURES', type:'Chelsea Boots' }) }}">Chelsea Boots</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'CHAUSSURES', type:'Chaussures' }) }}">Chaussures</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'CHAUSSURES', type:'Claquettes' }) }}">Claquettes</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'CHAUSSURES', type:'Tongs' }) }}">Tongs</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'CHAUSSURES', type:'Mocassins' }) }}">Mocassins</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'CHAUSSURES', type:'Sandales' }) }}">Sandales</a></li>
+                    </ul>
+                </div>
+                <div class="__brands">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'New Balance' }) }}">
+                                <img src="{{ asset('images/brand_logo/New_Balance.png') }}" alt="">New Balance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Nike' }) }}">
+                                <img src="{{ asset('images/brand_logo/nike.png') }}" alt="">Nike
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Puma' }) }}">
+                                <img src="{{ asset('images/brand_logo/Puma.png') }}" alt="">Puma
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Ray-Ban' }) }}">
+                                <img src="{{ asset('images/brand_logo/rayban.png') }}" alt="">Ray-Ban
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Reebok' }) }}">
+                                <img src="{{ asset('images/brand_logo/reebok.png') }}" alt="">Reebok
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Tommy Hilfiger' }) }}">
+                                <img src="{{ asset('images/brand_logo/tommy_hilfiger.png') }}" alt="">Tommy Hilfiger
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'adidas' }) }}">
+                                <img src="{{ asset('images/brand_logo/adidas.png') }}" alt="">adidas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Calvin Klein' }) }}">
+                                <img src="{{ asset('images/brand_logo/calvin_klein.png') }}" alt="">Calvin Klein
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Champion' }) }}">
+                                <img src="{{ asset('images/brand_logo/Champion.png') }}" alt="">Champion
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Diesel' }) }}">
+                                <img src="{{ asset('images/brand_logo/diesel.png') }}" alt="">Diesel
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Fila' }) }}">
+                                <img src="{{ asset('images/brand_logo/fila.png') }}" alt="">Fila
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'HUGO' }) }}">
+                                <img src="{{ asset('images/brand_logo/hugo.png') }}" alt="">HUGO
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'CHAUSSURES', brand:'Jack And Jones' }) }}">
+                                <img src="{{ asset('images/brand_logo/jack-and-jones-logo.png') }}" alt="">Jack And Jones
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="__cat_image">
+                    <img src="{{ asset('images/svg_images/shoes.svg') }}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="__cloths __shop_cat">
+            <a href="{{ path('product_by_cat', {
+                shop:theShop.id,
+                category:'VÊTEMENTS'
+            }) }}">VÊTEMENTS</a>
+            <div class="__cloth_items_list">
+                <div class="__type_items">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Blousons-Vestes' }) }}">Blousons-Vestes</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Chemises' }) }}">Chemises</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Costûmes' }) }}">Costûmes</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Débardeurs' }) }}">Débardeurs</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Jeans' }) }}">Jeans</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Joggings' }) }}">Joggings</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Pantalons' }) }}">Pantalons</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Pulls' }) }}">Pulls</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Polos' }) }}">Polos</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Shorts' }) }}">Shorts</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Sous-Vêtements' }) }}">Sous-Vêtements</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Survêtements' }) }}">Survêtements</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Robes-Jupes' }) }}">Robes-Jupes</a></li>
+                        <li><a href="{{ path('product_by_type', { shop:theShop.id, category:'VÊTEMENTS', type:'Sweats-Pulls' }) }}">Sweats-Pulls</a></li>
+                    </ul>
+                </div>
+                <div class="__brands">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'New Balance' }) }}">
+                                <img src="{{ asset('images/brand_logo/New_Balance.png') }}" alt="">New Balance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Nike' }) }}">
+                                <img src="{{ asset('images/brand_logo/nike.png') }}" alt="">Nike
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Puma' }) }}">
+                                <img src="{{ asset('images/brand_logo/Puma.png') }}" alt="">Puma
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Ray-Ban' }) }}">
+                                <img src="{{ asset('images/brand_logo/rayban.png') }}" alt="">Ray-Ban
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Reebok' }) }}">
+                                <img src="{{ asset('images/brand_logo/reebok.png') }}" alt="">Reebok
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Tommy Hilfiger' }) }}">
+                                <img src="{{ asset('images/brand_logo/tommy_hilfiger.png') }}" alt="">Tommy Hilfiger
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'adidas' }) }}">
+                                <img src="{{ asset('images/brand_logo/adidas.png') }}" alt="">adidas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Calvin Klein' }) }}">
+                                <img src="{{ asset('images/brand_logo/calvin_klein.png') }}" alt="">Calvin Klein
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Champion' }) }}">
+                                <img src="{{ asset('images/brand_logo/Champion.png') }}" alt="">Champion
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Diesel' }) }}">
+                                <img src="{{ asset('images/brand_logo/diesel.png') }}" alt="">Diesel
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Fila' }) }}">
+                                <img src="{{ asset('images/brand_logo/fila.png') }}" alt="">Fila
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'HUGO' }) }}">
+                                <img src="{{ asset('images/brand_logo/hugo.png') }}" alt="">HUGO
+                            </a></li>
+                        <li>
+                            <a href="{{ path('product_by_brand',
+                                { shop:theShop.id, category:'VÊTEMENTS', brand:'Jack And Jones' }) }}">
+                                <img src="{{ asset('images/brand_logo/jack-and-jones-logo.png') }}" alt="">Jack And Jones
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="__cat_image">
+                    <img src="{{ asset('images/svg_images/male-clothes.svg') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+{% block body %}{% endblock %}
+{% block footer %}
+    {% include "shop/__shop_footer.html.twig" %}
+{% endblock %}
+</body>
+</html>

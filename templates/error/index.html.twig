@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Error{% endblock %}
+
+{% block body %}
+<main class="__error_page">
+    <main class="__error_container">
+        <div class="__error">
+            {% if statusCode is same as(403) %}
+                <h2>Oups autorisation refusée</h2>
+                <p class="error_message">
+                    Pour pouvoir ouvrir votre boutique, il faut être inscris
+                    en tant que commerçant. <br>
+                    ... <br>
+                    Vous pouvez modifier votre status dans votre profil de client en commerçant.
+                </p>
+                {% else %}
+                    <h2>Oups une erreur a été rencontrée</h2>
+                    <p>{{ message }}</p>
+            {% endif %}
+
+        </div>
+    </main>
+</main>
+{% endblock %}

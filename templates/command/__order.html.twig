@@ -1,0 +1,31 @@
+<div class="__order_card">
+    <p>Commande numéro : {{ order.id }}  Date <em>{{ order.createdAt|format_datetime('short', 'none', locale='fr') }}</em></p>
+    <p>Articles</p>
+    <ul class="list-unstyled">
+        {% for item in items %}
+            <li><i class="fas fa-check"></i> {{ item.productName }} <span>x{{ article.quantity }}</span> <span>Taille : {{ article.itemSize }}</span>
+                <span>Marque : {{ item.productBrand }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="__client">
+        <div class="infos">
+            <span>Client : </span>
+            {{ order.user.username }}
+            <img src="{{ asset('images/avatar_def.png') }}" alt="client avatar">
+            <span>Tel: {{ order.user.phoneNumber }}</span>
+            {% if order.orderState is same as("new order") %}
+                <a href="{{ path('order_confirmation',
+                    { shop:order.shop.id, command:order.id, slug:order.shop.getSlug() }) }}" class="btn btn-sm btn-success">Confirmer la commande</a>
+                <a href="{{ path('order_canceling',
+                    { shop:order.shop.id, command:order.id, slug:order.shop.getSlug() }) }}" class="btn btn-sm">Annuler</a>
+                {% elseif order.orderState is same as("confirmed") %}
+                    <span><i class="fas fa-check-circle"></i> <em>Confirmée</em></span>
+                {% elseif order.orderState is same as("canceled")%}
+                    <span><i class="fas fa-ban"></i> <em>Annulée</em></span>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,22 @@
+{{ form_start(formCart) }}
+<div class="__row-2">
+    <div class="__column">
+        {{ form_label(formCart.productSize, '* La taille') }}
+        {{ form_widget(formCart.productSize) }}
+    </div>
+    <div class="__column">
+        {{ form_label(formCart.productQuantity, '* La quantité') }}
+        {{ form_widget(formCart.productQuantity) }}
+    </div>
+</div>
+
+<div class="__row-1">
+    <div class="__column_btn">
+        {% if product.availabilities|length %}
+            <button class="btn validate_btn" type="submit"><i class="fas fa-cart-plus"></i></button>
+            {% else %}
+                <button class="btn validate_btn" type="button"><i class="fas fa-cart-plus"></i></button>
+        {% endif %}
+    </div>
+</div>
+{{ form_end(formCart) }}

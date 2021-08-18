@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(form.quantity, "* Nombre d'articles en rayon pour cette taille") }}
+        {{ form_widget(form) }}
+    </div>
+    <div class="__row-1">
+        <div class="__column_btn">
+            <button class="btn" type="submit">Ajouter</button>
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}

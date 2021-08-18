@@ -1,0 +1,26 @@
+<div class="__product_card">
+    <div class="__shop_product_image">
+        <a href="{{ path('product_details', {
+            product:product.id,
+            slug: product.getSlug(),
+            shop: product.shop.getId()
+        }) }}" class="__image_product">
+            <img src="{{ asset('images/products_image/'~product.getProductImages()[0].getFilename()) }}" alt="product image">
+        </a>
+    </div>
+    <div class="__product_body">
+        <div class="__product_infos">
+            <span class="__product_brand">{{ product.productBrand }}</span>
+            <span>{{ product.productName }} </span>
+            <h5 class="__product_price">{{ product.productPrice | number_format(0, ' ', ' ') }} FG</h5>
+        </div>
+        <ul class="list-unstyled">
+            {% for size in product.productSizes %}
+                <li>{{ size.getSize() }}</li>
+            {% endfor %}
+        </ul>
+        {% if not product.productState %}
+            <span class="badge badge-danger">Non disponible</span>
+        {% endif %}
+    </div>
+</div>

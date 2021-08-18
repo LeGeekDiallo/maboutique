@@ -1,0 +1,72 @@
+{% extends 'the_shop_base.html.twig' %}
+{% block title %}{{ product.getSlug() }}{% endblock %}
+
+{% block body %}
+    <main class="__product_details_main_page">
+        <main class="__product_details_container">
+
+            <div class="__product_details">
+                <p class="shop_infos"></p>
+                <div class="__product_search">
+                    {% include "product/__search_product_form.html.twig" %}
+                </div>
+                <hr>
+                <div class="__the_shop_cat">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ path('product_by_cat', {
+                                shop:theShop.id,
+                                category:'ACCESSOIRES'
+                            }) }}">ACCESSOIRES</a></li>
+                        <li><a href="{{ path('product_by_cat', {
+                                shop:theShop.id,
+                                category:'CHAUSSURES'
+                            }) }}">CHAUSSURES</a></li>
+                        <li><a href="{{ path('product_by_cat', {
+                                shop:theShop.id,
+                                category:'VETEMENTS'
+                            }) }}">VÊTEMENTS</a></li>
+                    </ul>
+                </div>
+
+                <div class="__images" data-nb_img="{{ product.productImages | length }}" id="images">
+                    {% for img in product.productImages %}
+                        <div class="__product_img_item">
+                            <img src="{{ asset('images/products_image/'~img.getFilename()) }}" alt="">
+                        </div>
+                    {% endfor %}
+                    <a class="__left" id="__left">&#10094;</a>
+                    <a class="__right" id="__right">&#10095;</a>
+                    <div class="__dot_control">
+                        {% for image in product.productImages %}
+                            <span class="dot" data-index="{{ loop.index }}"></span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="__infos">
+                    <p>{{ product.productBrand }}</p>
+                    <h3>{{ product.productName  }}</h3>
+                    <span class="price">Prix : </span><span class="badge badge-danger">{{ product.productPrice|number_format(0, ' ', ' ') }} FG</span>
+                    <hr>
+                    <p>Pour ajouter cet article dans votre panier, veillez selectionner la taille</p>
+                    <div class="__add_to_cart">
+                        {% include "product/__add_to_cart_form.html.twig" %}
+                    </div>
+                    {% for message in app.flashes('notification') %}
+                        <div class="alert-danger __alert_error p-3" style="display: flex;">
+                            <p>{{ message }} <i class="far fa-surprise"></i></p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <hr>
+                <h4>Les clients aiment aussi ceux-ci</h4>
+                <div class="__related_product">
+                    {% for product in relatedProducts %}
+                        {% include "product/__related_product.html.twig" with {"product": product} %}
+                    {% endfor %}
+                </div>
+            </div>
+        </main>
+    </main>
+{% endblock %}
+
+

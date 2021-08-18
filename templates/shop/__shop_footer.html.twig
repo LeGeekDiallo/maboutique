@@ -1,0 +1,25 @@
+<footer class="page-footer">
+    <div class="__shop_footer">
+        <h4>{{ theShop.shopName }} votre boutique de vêtement</h4>
+        <div class="__footer_container">
+            <div class="__footer_column">
+                <h5>Compte</h5>
+                <ul>
+                    <li><a href="{{ path('cart', { shop:theShop.id }) }}">Panier</a></li>
+                    <li><a href="">Liste envies</a></li>
+                </ul>
+            </div>
+            <div class="__footer_column">
+                <h5>Contacter nous</h5>
+                <ul>
+                    <li><span>{{ theShop.city }}</span> - <span>{{ theShop.municipality }}</span> - <span>{{ theShop.district }}</span></li>
+                    <li>Tel : (+224) {{ theShop.phoneNumber }}</li>
+                    <li>Email : {{ theShop.email }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+        <a href="https://www.leyenguema.com">www.maboutique.com</a>
+    </div>
+</footer>

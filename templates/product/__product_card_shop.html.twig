@@ -1,0 +1,30 @@
+<div class="__product_card">
+    <div class="__product_image">
+        <img src="{{ asset('images/products_image/'~product.getProductImages()[0].getFilename()) }}" alt="product image">
+        <a href="{{ path('product_image', { product:product.id }) }}" class="__images_edit">
+            <i class="fas fa-images"></i>
+            {{ product.getProductImages()|length }}
+        </a>
+    </div>
+    <div class="__product_body">
+        <div class="__product_infos">
+            <span class="__product_brand">{{ product.productBrand }}</span>
+            <span>{{ product.productName }} <span class="__product_price">{{ product.productPrice | number_format(0, ' ', ' ') }} FG </span></span>
+        </div>
+        <hr>
+        <a href="{{ path('edit_product', { shop:product.shop.id, product:product.id }) }}" class="btn btn-sm"><i class="far fa-edit"></i></a>
+        <form method="post" onsubmit="return confirm('Êtes-vous sûr ?')" action="{{ path('delete_product', { product:product.id, shop:product.shop.id }) }}" style="display: inline-block;">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete'~product.getId()) }}">
+            <button type="submit" class="btn btn-sm"><i class="fas fas fa-trash-alt"></i></button>
+        </form>
+        <a href="" class="btn btn-sm">Voire en rayon</a>
+        {% if product.nbSize != 0 %}
+            <a href="{{ path('new_quantity', {
+                product:product.id,
+                shop:product.shop.id,
+                sizeState:"new"
+            }) }}" class="btn btn-sm">Ajouter en rayon</a>
+        {% endif %}
+    </div>
+</div>

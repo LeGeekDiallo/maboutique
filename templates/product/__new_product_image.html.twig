@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(form.filename, "* Nouvelles images") }}
+        {{ form_widget(form.filename) }}
+    </div>
+    <div class="__row-1">
+        <div class="__column_btn">
+            <button class="btn validate_btn" type="submit">Valider</button>
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}
+

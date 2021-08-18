@@ -1,0 +1,23 @@
+{% extends 'back_shop_base.html.twig' %}
+{% block title %}Vos clients{% endblock %}
+
+{% block body %}
+    <main class="__shop_client_page">
+        <main class="__container">
+            <div class="__client_search">
+                {{ form_start(form) }}
+                {{ form_widget(form.clientSearch) }}
+                <button type="submit" class="btn btn-sm"><i class="fas fa-search"></i></button>
+                {{ form_end(form) }}
+            </div>
+            <h3>Liste de vos clients</h3>
+            <div class="__clients">
+                {% for client in clients %}
+                    {% include "shop/__client_card.html.twig" with { client: client } %}
+                {% endfor %}
+            </div>
+        </main>
+    </main>
+{% endblock %}
+
+

@@ -1,0 +1,32 @@
+{% extends 'back_shop_base.html.twig' %}
+
+{% block title %}Stock {{ shop.slug }}{% endblock %}
+
+{% block body %}
+    <main class="__stock_main_page">
+        <main class="__container">
+            <p class="anchor"><a href="#new_in_stock" class="btn btn-sm">Ajouter au stock</a></p>
+            <h5>VÊTEMENTS</h5>
+            <div class="__items">
+                {% for cloth in cloths %}
+                    {% include "stock/__cloth_card.html.twig" %}
+                {% endfor %}
+            </div>
+            <h5>CHAUSSURES</h5>
+            <div class="__items">
+                {% for sh in shoes %}
+                    {% include "stock/__shoes_card.html.twig" %}
+                {% endfor %}
+            </div>
+            <h5>ACCESSOIRES</h5>
+            <div class="__items">
+                {% for acc in accessories %}
+                    {% include "stock/__accessories_card.html.twig" %}
+                {% endfor %}
+            </div>
+            <hr>
+            <h3 id="new_in_stock">AJOUTER AU STOCK</h3>
+            {% include "stock/__new_stock_form.html.twig" %}
+        </main>
+    </main>
+{% endblock %}

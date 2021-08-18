@@ -1,0 +1,22 @@
+{% extends 'the_shop_base.html.twig' %}
+
+{% block title %}Récapitulatif de commande{% endblock %}
+
+{% block body %}
+    <main class="__command_recap_page">
+        <main class="__container">
+            <h3>Recapitulatif de votre commande</h3>
+            <div class="__products">
+                {% for product in carts %}
+                    {% include "product/__product_card_command.html.twig" with {"product": product.getProduct()[0], "cart": product} %}
+                {% endfor %}
+            </div>
+            <div class="__proceed">
+                <p>Total: {{ price | number_format(0, ' ', ' ') }} FG </p>
+                <a href="{{ path('new_command', { shop:theShop.id, user:app.user.id, price:price }) }}" class="btn btn-sm">Passer la commande</a>
+            </div>
+        </main>
+    </main>
+{% endblock %}
+
+

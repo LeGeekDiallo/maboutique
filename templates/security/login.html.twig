@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <main class="__main_page">
+        <div class="__container">
+            <div class="__form_login_container">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                <div class="__log_svg">
+                    <img src="{{ asset('images/svg_images/logIn.svg') }}" alt="image svg">
+                </div>
+                <div class="__announcement"><h5>Connexion</h5></div>
+                <form method="post">
+                    <div class="__row-2">
+                        <div class="__column">
+                            <label for="email">* Email</label>
+                            <input type="text" value="{{ last_username }}" placeholder="Ex: exemple@gmail.com" name="email" id="email" class="form-control" autocomplete="username" required autofocus>
+                        </div>
+                        <div class="__column">
+                            <label for="inputPassword">* Mot de passe</label>
+                            <input type="password" name="password" placeholder="12345" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+
+                    {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Remember me
+                        </label>
+                    </div>
+                    #}
+                    <div class="__row-1">
+                        <div class="__column_btn_log">
+                            <button class="btn btn-sm validate_btn" type="submit">Je me connecte</button>
+                        </div>
+                    </div>
+                </form>
+                <p class="__forgotten_password text-muted"><a href=""><em>Mot de passe oublié</em></a></p>
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}

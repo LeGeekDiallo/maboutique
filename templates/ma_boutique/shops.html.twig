@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}Boutiques correspondantes{% endblock %}
+
+{% block body %}
+    <main class="shops_main_page">
+        <main class="shops_container">
+            <p>Rechercher une boutique de vêtement</p>
+            <div class="__shop_search">
+                {{ include('ma_boutique/__form_shop_search.html.twig') }}
+            </div>
+            <hr>
+            <div class="__shops_founds">
+                {% for shop in shops %}
+                    {% include "ma_boutique/__shop_card.html.twig" with {'shop': shop} %}
+                {% endfor %}
+                <div class="navigation">
+                    {{ knp_pagination_render(shops) }}
+                </div>
+            </div>
+        </main>
+
+    </main>
+    {{ include('footer.html.twig') }}
+{% endblock %}
+
+

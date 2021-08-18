@@ -1,0 +1,14 @@
+{{ form_start(commentForm) }}
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(commentForm.comment, "* Votre commentaire") }}
+        {{ form_widget(commentForm.comment) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column_btn">
+        <button class="btn btn-sm validate_btn" type="submit">Commenter</button>
+    </div>
+</div>
+{{ form_end(commentForm) }}
+

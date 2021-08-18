@@ -1,0 +1,45 @@
+{{ form_start(form) }}
+<p>Ajout de nouveau produit</p>
+<hr>
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(form.productName, "* Nom du produit") }}
+        {{ form_widget(form.productName) }}
+    </div>
+</div>
+<div class="__row-3">
+    <div class="__column">
+        {{ form_label(form.productCategory, "* Selectionnez la catégorie") }}
+        {{ form_widget(form.productCategory) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.productType, "* Selectionnez le type") }}
+        {{ form_widget(form.productType) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.productBrand, "* Selectionnez la marque") }}
+        {{ form_widget(form.productBrand) }}
+    </div>
+</div>
+<div class="__row-2">
+    <div class="__column">
+        {{ form_label(form.productSizes, "* Selectionnez les tailles") }}
+        {{ form_widget(form.productSizes) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.productPrice, "* Le prix du produit") }}
+        {{ form_widget(form.productPrice) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(form.productImages, "* Chargez les images") }}
+        {{ form_widget(form.productImages) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column_btn">
+        <button class="btn btn-sm validate_btn" type="submit">Suivant</button>
+    </div>
+</div>
+{{ form_end(form) }}

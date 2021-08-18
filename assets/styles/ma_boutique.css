@@ -1,0 +1,123 @@
+.__announcement{
+    font-family: Ubuntu;
+    font-size: 15px;
+    color: #F1166C;
+    text-align: center;
+}
+.footer-copyright{
+    background-color: #F1166C;
+}
+.__shop_search{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+}
+.__shop_search form{
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.__shop_search form input{
+    margin-right: 5px;
+}
+.__shop_search form button{
+    color: black;
+    background-color: #F1166C;
+}
+
+.__svg_logo{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.__svg_logo img{
+    height: 100%;
+    width: 100%;
+}
+.__nav_bar_back_shop{
+    height: 5rem;
+    padding: 3px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid aliceblue;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #F1166C;
+}
+.__nav_bar{
+    height: 5rem;
+    padding: 3px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid #F1166C;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.__home_link{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.__home_links{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.__sign_log_link, .__new_shop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.__sign_log_link a{
+    margin-right: 5px;
+}
+.__home_link a{
+    font-size: 1.5rem;
+    font-family: Ubuntu;
+    color: black;
+}
+.__home_link a span{
+    color: #F1166C;
+}
+.__home_panel{
+    margin-top: 5rem;
+    width: 100%;
+    height: 40rem;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+@font-face {
+    font-family: Ubuntu;
+    src: url("Ubuntu-Bold.ttf");
+}
+@font-face {
+    font-family: Ubuntu-ligth;
+    src: url("Ubuntu-Light.ttf");
+}
+p{
+    font-family: Ubuntu;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-family: Ubuntu-ligth;
+}
+hr{
+    background-color: #F1166C ;
+    width: 70%;
+    height: 5px;
+}

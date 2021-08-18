@@ -1,0 +1,51 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+
+    # https://symfony.com/doc/current/security/experimental_authenticators.html
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        from_database:
+            entity:
+                class: App\Entity\User
+                property: email
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            lazy: true
+            provider: from_database
+            custom_authenticator: App\Security\AppAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/new_shop_welcome, roles: ROLE_MERCHANT }
+        - { path: ^/new_image, roles: ROLE_MERCHANT }
+        - { path: ^/products, roles: ROLE_MERCHANT }
+        - { path: ^/new_product, roles: ROLE_MERCHANT }
+        - { path: ^/edit_product, roles: ROLE_MERCHANT }
+        - { path: ^/command_recap, roles: ROLE_CLIENT }
+        - { path: ^/shop_clients, roles: ROLE_MERCHANT }
+        - { path: ^/shop_orders, roles: ROLE_MERCHANT }
+        - { path: ^/orders_by_state, roles: ROLE_MERCHANT }
+        - { path: ^/order_confirmation, roles: ROLE_MERCHANT }
+        - { path: ^/order_canceling, roles: ROLE_MERCHANT }
+        - { path: ^/product_image, roles: ROLE_MERCHANT }
+        - { path: ^/stock, roles: ROLE_MERCHANT }

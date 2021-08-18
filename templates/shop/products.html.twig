@@ -1,0 +1,25 @@
+{% extends 'back_shop_base.html.twig' %}
+{% block title %}Tous les produits{% endblock %}
+
+{% block body %}
+    <main class="__back_shop_container">
+        <main class="__back_shop_page">
+            <div class="__product_container">
+                <a href="{{ path('new_product', { shop:app.user.shop.id, slug:app.user.shop.getSlug() }) }}" class="btn"><i class="fas fa-plus-circle"></i> Ajouter un nouveau produit</a>
+                {% for message in app.flashes('notification') %}
+                    <div class="alert-success __alert_error p-3 mt-2" style="display: flex;">
+                        <p>{{ message }} <i class="far fa-smile"></i></p>
+                    </div>
+                {% endfor %}
+                <hr>
+                <div class="__products">
+                    {% for product in pagination %}
+                        {% include "product/__product_card_shop.html.twig" with {'product': product} %}
+                    {% endfor %}
+                </div>
+            </div>
+        </main>
+    </main>
+{% endblock %}
+
+

@@ -1,0 +1,28 @@
+{% extends 'back_shop_base.html.twig' %}
+
+{% block title %}Modification Image{% endblock %}
+
+{% block body %}
+    <main class="__back_shop_container">
+        <main class="__back_shop_page">
+            <div class="__form_container">
+                <h5>Modification du logo de votre boutique</h5>
+                {{ form_start(form) }}
+                <div class="__row-1">
+                    <div class="__column">
+                        {{ form_label(form.filename, "* Choisir l'image") }}
+                        {{ form_widget(form.filename) }}
+                    </div>
+                </div>
+                <div class="__row-1">
+                    <div class="__column_btn">
+                        <button class="validate_btn btn btn-sm" type="submit">Modifier</button>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </main>
+    </main>
+{% endblock %}
+
+

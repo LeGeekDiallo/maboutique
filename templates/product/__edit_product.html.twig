@@ -1,0 +1,40 @@
+{{ form_start(form) }}
+<p>Modification</p>
+<hr>
+<div class="__row-2">
+    <div class="__column">
+        {{ form_label(form.productName, "* Nouveau nom") }}
+        {{ form_widget(form.productName) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.productGender, "* Selectionnez le genre") }}
+        {{ form_widget(form.productGender) }}
+    </div>
+</div>
+<div class="__row-3">
+    <div class="__column">
+        {{ form_label(form.productCategory, "* Selectionnez la catégorie") }}
+        {{ form_widget(form.productCategory) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.productType, "* Selectionnez le type") }}
+        {{ form_widget(form.productType) }}
+    </div>
+    <div class="__column">
+        {{ form_label(form.productBrand, "* Selectionnez la marque") }}
+        {{ form_widget(form.productBrand) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column">
+        {{ form_label(form.productPrice, "* Nouveau prix du produit") }}
+        {{ form_widget(form.productPrice) }}
+    </div>
+</div>
+<div class="__row-1">
+    <div class="__column_btn">
+        <button class="btn btn-sm validate_btn" type="submit">Valider</button>
+    </div>
+</div>
+{{ form_end(form) }}
+

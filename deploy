@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av ./ u96046395@access767469761.webspace-data.io:maboutique --include=public/build --include=vendor --exclude-from=.gitignore --exclude=public/images/products_image --exclude=public/images/shop_logo --exclude=".*"
